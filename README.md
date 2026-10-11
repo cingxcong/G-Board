@@ -8,6 +8,14 @@ Morphe patch project exploring custom-font support for Google Gboard.
 
 Develop a Morphe `.mpp` patch that can help users customize Gboard's typeface while keeping the original app patchable through Morphe Desktop/Manager.
 
+## Install in Morphe (important)
+
+For the current experimental build, download the **`.mpp` file itself** from the latest successful [Build Patch workflow run](https://github.com/cingxcong/G-Board/actions/workflows/build-patch.yml). Expand the downloaded workflow-artifact ZIP first, then select the `.mpp` inside it in Morphe → Sources → **+** → Local. Do not select the outer artifact ZIP, and do not reuse an older `.mpp` from an earlier build.
+
+The CI run also generates `patches-list.json` as a discovery report. That JSON is not the local patch bundle; use the `.mpp` file. The feature is still an experimental diagnostic probe, so even when Morphe lists it, the typeface hook has not yet been confirmed to change the visible key legends.
+
+For a remote source, Morphe needs a published release/metadata. This feature branch is not a release branch, so adding the repository URL alone may show no patches until a release is published. Do not manually edit the generated `patches-list.json` or `patches-bundle.json`.
+
 ## Build
 
 Requirements: Java 21 and the Gradle wrapper included in this repository.
