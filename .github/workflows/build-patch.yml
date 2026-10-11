@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    name: Build Morphe patch bundle
+    name: Build and validate Morphe patch bundle
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,15 +23,24 @@ jobs:
           java-version: '21'
           cache: gradle
 
-      - name: Build patch bundle
+      - name: Build bundle and run Morphe patch discovery
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew :patches:buildAndroid --no-daemon
+        run: ./gradlew :patches:generatePatchesList --no-daemon
 
-      - name: Upload .mpp artifact
+      - name: Validate discovered patch list
+        run: |
+          test -s patches-list.json
+          jq -e '.patches | type == "array" and length > 0' patches-list.json
+          jq -e '.patches | any(.name == "Gboard Font Hook Probe (Experimental)")' patches-list.json
+          echo "Morphe discovery found the expected experimental probe patch."
+
+      - name: Upload bundle and discovery report
         uses: actions/upload-artifact@v4
         with:
           name: gboard-font-studio-mpp
-          path: patches/build/libs/*.mpp
+          path: |
+            patches/build/libs/*.mpp
+            patches-list.json
           if-no-files-found: error
           retention-days: 14
