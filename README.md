@@ -2,7 +2,7 @@
 
 Morphe patch project exploring custom-font support for Google Gboard.
 
-> **Development status:** reverse-engineering phase. The actual Gboard font-replacement patch is not yet implemented or validated against a target APK. Do not treat a successful template build as proof that font customization works.
+> **Development status:** experimental hook-probe stage. An opt-in diagnostic patch now targets a candidate typeface setter, but a user-selectable custom-font feature is not implemented or runtime-validated. Do not treat a successful build as proof that font customization works.
 
 ## Goal
 
@@ -20,21 +20,22 @@ The patch bundle is expected at `patches/build/libs/patches-*.mpp`. Apply it wit
 
 ## GitHub Actions
 
-The Release workflow verifies compilation and handles semantic releases. The Build Patch workflow builds the bundle for pushes and pull requests and uploads it as a workflow artifact.
+The Build Patch workflow builds the bundle for pushes and pull requests and uploads it as a workflow artifact.
 
 ## Current work
 
 - [x] Configure Morphe project metadata for Gboard Font Studio.
 - [x] Add a CI workflow to build and upload the `.mpp` artifact.
 - [x] Inspect the supplied Gboard 18.4.1 APK and record candidate font hooks in [the reverse-engineering notes](docs/APK-REVERSE-ENGINEERING.md).
-- [ ] Prove a candidate hook is used for primary Latin key labels.
-- [ ] Replace the template example patch with a Gboard-specific font patch.
-- [ ] Fingerprint and test a supported Gboard APK version with Morphe.
-- [ ] Document how to provide/select a font and apply the patch safely.
+- [x] Add an opt-in diagnostic probe that substitutes system monospace at the candidate setter.
+- [x] Confirm the project and extension bundle compile in GitHub Actions.
+- [ ] Confirm the fingerprint matches when Morphe applies the probe to the supplied APK.
+- [ ] Verify visually whether primary Latin key labels use this setter.
+- [ ] Implement user-selectable custom-font loading and test glyph fallback/layout/stability.
 
 ## Compatibility and safety
 
-Gboard implementation details may vary by version and device architecture. A patch must be tested against an explicitly identified APK before it is marked compatible. Keep a copy of the original APK and use Morphe's normal patching workflow.
+The probe is pinned to Gboard 18.4.1 because that is the APK currently inspected. It is disabled by default and should remain experimental until the fingerprint and visible keyboard behavior are tested. Keep a copy of the original APK and use Morphe's normal patching workflow.
 
 ## License
 
