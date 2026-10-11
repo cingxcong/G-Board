@@ -1,14 +1,13 @@
-group = "app.template"
+group = "app.cingxcong.gboardfontstudio"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "Gboard Font Studio"
+        description = "Morphe patches for experimenting with font customization in Google Gboard."
+        source = "https://github.com/cingxcong/G-Board"
+        author = "cingxcong"
+        contact = "https://github.com/cingxcong/G-Board/issues"
+        website = "https://github.com/cingxcong/G-Board"
         license = "GPLv3"
     }
 }
