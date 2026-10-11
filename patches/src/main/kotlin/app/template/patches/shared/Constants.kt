@@ -9,7 +9,7 @@ object Constants {
         name = "Gboard",
         packageName = "com.google.android.inputmethod.latin",
         apkFileType = ApkFileType.APK,
-        appIconColor = 0xFF4285F4.toInt(),
+        appIconColor = 0x4285F4,
         targets = listOf(
             // The only target currently investigated locally. Do not broaden until tested.
             AppTarget(version = "18.4.1")
