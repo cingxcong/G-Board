@@ -35,12 +35,18 @@ jobs:
           jq -e '.patches | any(.name == "Gboard Font Hook Probe (Experimental)")' patches-list.json
           echo "Morphe discovery found the expected experimental probe patch."
 
-      - name: Upload bundle and discovery report
+      - name: Stage installable bundle only
+        run: |
+          mkdir -p dist
+          cp patches/build/libs/patches-*.mpp dist/
+          rm -f dist/*-sources.mpp dist/*-javadoc.mpp
+          test "$(find dist -maxdepth 1 -type f -name '*.mpp' | wc -l)" -eq 1
+          cp patches-list.json dist/
+
+      - name: Upload installable bundle and discovery report
         uses: actions/upload-artifact@v4
         with:
-          name: gboard-font-studio-mpp
-          path: |
-            patches/build/libs/*.mpp
-            patches-list.json
+          name: gboard-font-studio-install
+          path: dist/*
           if-no-files-found: error
           retention-days: 14
