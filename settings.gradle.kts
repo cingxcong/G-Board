@@ -1,4 +1,4 @@
-rootProject.name = "morphe-patches-template"
+rootProject.name = "gboard-font-studio"
 
 pluginManagement {
     repositories {
