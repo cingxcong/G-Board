@@ -7,7 +7,7 @@
     },
     {
       "name": "feat/gboard-font-studio-foundation",
-      "prerelease": true
+      "prerelease": "beta"
     }
   ],
   "plugins": [
