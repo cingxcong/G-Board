@@ -33,7 +33,7 @@ The Build Patch workflow builds the bundle for pushes and pull requests and uplo
 ## Published patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0-beta.1](https://github.com/cingxcong/G-Board/releases/tag/v1.0.0-beta.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`feat/gboard-font-studio-foundation`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+> **[v1.0.0-beta.2](https://github.com/cingxcong/G-Board/releases/tag/v1.0.0-beta.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`feat/gboard-font-studio-foundation`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
 <details open>
 <summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>

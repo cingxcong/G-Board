@@ -1,3 +1,9 @@
+## [1.0.0-beta.2](https://github.com/cingxcong/G-Board/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2026-10-11)
+
+### 🐛 Bug Fixes
+
+* normalize inline smali probe instructions ([041213b](https://github.com/cingxcong/G-Board/commit/041213bd5312e104c762a763640e4c779e1e5e61))
+
 ## 1.0.0-beta.1 (2026-10-11)
 
 ### 🐛 Bug Fixes
