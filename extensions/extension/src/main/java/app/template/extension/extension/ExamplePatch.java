@@ -1,11 +1,16 @@
 package app.template.extension.extension;
 
-@SuppressWarnings("unused")
-public class ExamplePatch {
+import android.graphics.Typeface;
 
-    public static boolean showAds() {
-        // Complex Java logic goes here.
-        // Simple patches that override with fixed values do not need to use or call extension code.
-        return false;
+/**
+ * Temporary diagnostic helper. The final font feature will replace this
+ * system-font substitution with a validated user-selected font source.
+ */
+@SuppressWarnings("unused")
+public final class GboardFontHookProbe {
+    private GboardFontHookProbe() {}
+
+    public static Typeface replaceTypeface(Typeface original) {
+        return Typeface.create("monospace", Typeface.NORMAL);
     }
 }
