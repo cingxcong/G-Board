@@ -30,6 +30,11 @@ The patch bundle is expected at `patches/build/libs/patches-*.mpp`. Apply it wit
 
 The Build Patch workflow builds the bundle for pushes and pull requests and uploads it as a workflow artifact.
 
+## Published patches
+
+<!-- PATCHES_START EXPANDED -->
+<!-- PATCHES_END -->
+
 ## Current work
 
 - [x] Configure Morphe project metadata for Gboard Font Studio.
