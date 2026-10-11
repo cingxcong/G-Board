@@ -4,8 +4,6 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.template.patches.shared.Constants.COMPATIBILITY_GBOARD_18_4_1
 
-private const val EXTENSION_CLASS = "Lapp/template/extension/extension/GboardFontHookProbe;"
-
 /**
  * Diagnostic only: temporarily substitutes a system monospace typeface.
  * This is intended to prove whether AutoCenterScaleTextView controls the
@@ -24,9 +22,9 @@ val fontHookProbePatch = bytecodePatch(
         AutoCenterScaleTypefaceFingerprint.method.addInstructions(
             0,
             """
-                invoke-static {p1}, $EXTENSION_CLASS;->replaceTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+                invoke-static {p1}, Lapp/template/extension/extension/GboardFontHookProbe;->replaceTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
                 move-result-object p1
-            """
+            """.trimIndent()
         )
     }
 }
