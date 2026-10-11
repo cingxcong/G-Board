@@ -33,6 +33,22 @@ The Build Patch workflow builds the bundle for pushes and pull requests and uplo
 ## Published patches
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0-beta.1](https://github.com/cingxcong/G-Board/releases/tag/v1.0.0-beta.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`feat/gboard-font-studio-foundation`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+<details open>
+<summary>📦 Gboard&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 18.4.1 | 18.5.1.993608717-beta-arm64-v8a |
+| :---: | :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Gboard Font Hook Probe (Experimental)](#gboard-font-hook-probe-experimental) | Diagnostic test for the candidate Gboard key-label typeface hook. Uses system monospace; not a custom-font selector. |  |
+
+</details>
+
 <!-- PATCHES_END -->
 
 ## Current work
