@@ -2,7 +2,7 @@
 
 Morphe patch project exploring custom-font support for Google Gboard.
 
-> **Development status:** foundation setup. The actual Gboard font-replacement patch is not yet implemented or validated against a target APK. Do not treat a successful template build as proof that font customization works.
+> **Development status:** reverse-engineering phase. The actual Gboard font-replacement patch is not yet implemented or validated against a target APK. Do not treat a successful template build as proof that font customization works.
 
 ## Goal
 
@@ -26,8 +26,10 @@ The Release workflow verifies compilation and handles semantic releases. The Bui
 
 - [x] Configure Morphe project metadata for Gboard Font Studio.
 - [x] Add a CI workflow to build and upload the `.mpp` artifact.
+- [x] Inspect the supplied Gboard 18.4.1 APK and record candidate font hooks in [the reverse-engineering notes](docs/APK-REVERSE-ENGINEERING.md).
+- [ ] Prove a candidate hook is used for primary Latin key labels.
 - [ ] Replace the template example patch with a Gboard-specific font patch.
-- [ ] Fingerprint and test a supported Gboard APK version.
+- [ ] Fingerprint and test a supported Gboard APK version with Morphe.
 - [ ] Document how to provide/select a font and apply the patch safely.
 
 ## Compatibility and safety
